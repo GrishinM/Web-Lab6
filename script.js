@@ -1,6 +1,17 @@
 let popup = document.querySelector(".popup")
 let openButton = document.querySelector(".contacts-button")
+let closeButton = document.querySelector(".close-button")
 let shader = document.querySelector(".shader")
+
+function open() {
+    popup.classList.remove("popup-hidden")
+    shader.classList.add("shader-active")
+}
+
+function close() {
+    popup.classList.add("popup-hidden")
+    shader.classList.remove("shader-active")
+}
 
 openButton.addEventListener("mouseenter", function () {
     openButton.classList.add("contacts-button-active")
@@ -12,17 +23,16 @@ openButton.addEventListener("mouseleave", function () {
     document.body.style.cursor = "auto"
 })
 
-openButton.addEventListener("click", function () {
-    popup.classList.remove("popup-hidden")
-    shader.classList.add("shader-active")
-})
+openButton.addEventListener("click", open)
 
 document.addEventListener("keydown", function (evt) {
     if (evt.code === "Escape") {
-        popup.classList.add("popup-hidden")
-        shader.classList.remove("shader-active")
+        close()
     }
 })
+
+shader.addEventListener("click", close)
+closeButton.addEventListener("click", close)
 
 let photos = document.querySelectorAll(".mini-photo")
 let fullPhoto = document.querySelector(".full-photo")

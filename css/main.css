@@ -131,6 +131,11 @@ code {
     margin-top: 10px;
 }
 
+.close-button {
+    float: right;
+    width: 25px;
+}
+
 .popup {
     position: fixed;
     margin: 100px auto;
@@ -180,6 +185,6 @@ code {
 }
 
 .full-photo {
-    width: 650px;
+    width: 70%;
     margin: 30px;
 }
